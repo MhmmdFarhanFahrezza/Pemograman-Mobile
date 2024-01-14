@@ -2,41 +2,109 @@
 <h1> MyApp</h1>
 
 ```
-Nama    : NURUL AKBAR
-NIM     : 312210413
-Kelas   : TI.22.A4
-Matkul  : Pemrograman Mobile 1
-Dosen   : Donny Maulana, S.Kom., M.M.S.I.
+Nama  : Muhammad Farhan Fahreza
+Nim   : 312210380
+Kelas : TI.22.A4
+Dosen : Donny Maulana, S.Kom., M.M.S.I.
 ```
-## **Menu Aplikasi**
 
-###  1. **Hello** <br>
-Menampilkan teks "Bagaimana kabar anda hari ini?". <br>
+## 1. **Splash Launcer**
+
+- Kelas SplashActivity:
+   - SPLASH_DELAY: Waktu penundaan layar pembuka (3000 milidetik).
+- Metode onCreate:
+   - Atur tampilan ke layout R.layout.activity_splash.
+   - Sembunyikan status bar untuk tampilan layar penuh.
+   - Gunakan Handler untuk penundaan sebelum beralih ke menu.
+   - Metode openMenu:
+- Buat Intent untuk pindah ke DashboardActivity.
+- Mulai aktivitas baru dan tutup SplashActivity.
+
+## 2. **Home Dashboard**
+
+- Metode onCreate:
+   - Atur tampilan ke layout R.layout.activity_dashboard.
+   - Temukan semua elemen CardView dalam layout.
+   - Set Click Actions untuk Setiap CardView:
+- Atur tindakan klik untuk setiap CardView dengan membuat dan memulai intent untuk aktivitas terkait saat CardView diklik.
+- Navigasi:
+   - HelloCard: ke HelloActivity
+   - FibonacciCard: ke FibonacciActivity
+   - NewsCard: ke ScrollingIcecold
+   - ChatCard: ke OneActivity
+   - AlarmCard: ke AlarmActivity
+   - MapsCard: ke MapActivity
+   - FragmentCard: ke ViewPagerActivity
+   - CountCard: ke MainActivity
+
+## 3. **Hello**
+
+- Turunan dari AppCompatActivity.
+- Override metode onCreate untuk menetapkan tata letak (layout) ke R.layout.activity_hello.
+- Override Metode onCreateOptionsMenu:
+   - Membuat menu pada aktivitas.
+   - Inflate menu dari file R.menu.activity_menu.
+   - Override Metode onOptionsItemSelected
 
 
-### 2. **Fibonacci** <br>
-Menampilkan perhitungan dari fibonacci yaitu 1,1,2,3,5,8....dst. sesuai limit yang kita masukkan.
+## 4. **Count**
 
+- Variabel Kelas:
+   - mShowCount: Sebuah objek TextView untuk menampilkan jumlah perhitungan.
+   - currentCount: Sebuah variabel untuk menyimpan nilai perhitungan saat ini.
+- Metode onCreate:
+   - Inisialisasi tata letak (layout) dari aktivitas menggunakan R.layout.activity_main.
+   - Inisialisasi TextView dengan ID show_count.
 
-### 3. **News** <br>
-Menampilkan News atau berita
+## 5. **News**
 
+- Metode onCreate:
+   - Dipanggil saat aktivitas dibuat.
+   - Inisialisasi tata letak (layout) dari aktivitas menggunakan R.layout.activity_scrollicecold.
+- Kelas ScrollingIcecold mewarisi dari AppCompatActivity.
+- Metode onCreate mengatur layout aktivitas ke activity_scrollicecold.xml.
 
-### 4. **Chat** <br>
-Chat adalah program yang terdapat 2 fungsi yaitu mengirim pesan dan membalas pesan
+## 6. **Alarm**
 
-### 5. **Alarm** <br>
-Menampilkan alarm 
+- Penjelasan Tambahan:
+   - Waktu alarm diatur menggunakan TimePicker.
+   - Jika toggle diaktifkan, alarm diatur menggunakan AlarmManager.setRepeating, dan akan berbunyi secara terus menerus hingga toggle dimatikan.
+   - Waktu alarm diatur untuk memastikan bahwa alarm diatur untuk hari berikutnya jika waktu yang ditentukan sudah lewat pada hari yang sama.
 
-### 6. **Maps** <br>
-Menampilkan Aplikasi Maps dengan mengimplementasikan Implisit Intent
+## 7. **Fibonacci**
 
-### 7. **Movie** <br>
-Menampilkan program movie yang dibuat untuk mengimplementasikan fungsi **Fragment**
+- Variabel Kelas:
+   - fibMinus1, fibMinus2, currentFib: Variabel yang menyimpan nilai deret Fibonacci.
+   - showCount: Objek TextView untuk menampilkan nilai deret Fibonacci.
+   - n: Variabel untuk menyimpan indeks deret Fibonacci.
+   - limit: Batas nilai deret Fibonacci.
+   - mLimitInput: Objek EditText untuk mengambil input batas nilai.
 
-### 8. **Count** <br>
-Menampilkan perhitungan penjumlahan 1 atau Toast.
+## 8. **Chat**
 
-## **DEMO**
+- Output Penjelasan:
+   - launchSecondActivity: Memulai SecondActivity dan mengirimkan pesan yang diambil dari mMessageEditText sebagai ekstra ke intent.
+   - onActivityResult: Dipanggil saat aktivitas kedua (SecondActivity) memberikan hasil balasan.
+   - Jika hasilnya RESULT_OK, tampilkan balasan di mReplyTextView dan buat mReplyHeadTextView terlihat.
 
-https://github.com/NurAkbarr/MyApp/assets/115671335/56406d56-c2eb-4de0-8c0d-d8a3927222c9
+## 9. **Maps**
+
+- Output Penjelasan:
+- onCreate:
+   - Menginisialisasi tata letak (layout) dari aktivitas.
+   - Menetapkan nilai latitude dan longitude sebagai contoh.
+   - Membuat objek Uri dari koordinat lokasi.
+   - Memanggil metode showMap untuk menampilkan peta.
+
+## 10. **Movie**
+
+1. Tab Activity:
+
+Menggunakan TabLayout dan ViewPager untuk mengorganisir konten film dalam tab.
+Menggunakan adapter Halaman untuk mengelola konten dalam ViewPager.
+
+2. Fragment:
+
+Menggunakan fragment untuk menampilkan daftar film dalam kategori "Action", "Fantasy", dan "Romantic".
+Menggunakan OnClickListener untuk memulai aktivitas Exoplayer1Activity ketika gambar film diklik.
+
