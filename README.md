@@ -6,6 +6,7 @@ Nama  : Muhammad Farhan Fahreza
 Nim   : 312210380
 Kelas : TI.22.A4
 Dosen : Donny Maulana, S.Kom., M.M.S.I.
+LINK  :https://youtube.com/shorts/kQSWz4-2pLQ?si=vTtdOZEgjv2ODoF8
 ```
 
 ## 1. **Splash Launcer**
